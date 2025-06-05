@@ -29,7 +29,7 @@ dotnet restore
 3. Iniciar a Aplicação:
 
 ```bash
-dotnet run --project TaskListSystem
+dotnet run --project TaskListSystem.API
 ```
 
 
