@@ -32,7 +32,7 @@ public class TaskServiceTest
             Title = "Teste",
             Description = "Descrição",
             DueDate = DateTime.Now.AddDays(1),
-            Status = TaskStatusEnum.Pendente
+            Status = TaskStatusEnum.Concluida
         };
 
         var result = _service.CreateTask(dto);
@@ -49,7 +49,7 @@ public class TaskServiceTest
             Title = "Teste",
             Description = "Descrição",
             DueDate = DateTime.Now.AddDays(1),
-            Status = TaskStatusEnum.Pendente
+            Status = TaskStatusEnum.Concluida
         };
 
         Assert.Throws<NotFoundException>(() => _service.UpdateTask(Guid.NewGuid(), dto));

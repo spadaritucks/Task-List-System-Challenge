@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Moq;
 using NUnit.Framework;
 using Task_List_System.Filters;
@@ -17,10 +18,12 @@ public class ExceptionFilterTest
     {
         var exception = new NotFoundException("Não encontrado");
         var context = new ExceptionContext(
-            new ActionContext
-            {
-                HttpContext = new DefaultHttpContext()
-            },
+            new ActionContext(
+                new DefaultHttpContext(),
+                new Microsoft.AspNetCore.Routing.RouteData(),
+                new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor(),
+                new ModelStateDictionary()
+            ),
             new List<IFilterMetadata>()
         )
         {
@@ -41,10 +44,12 @@ public class ExceptionFilterTest
     {
         var exception = new Exception("Erro desconhecido");
         var context = new ExceptionContext(
-            new ActionContext
-            {
-                HttpContext = new DefaultHttpContext()
-            },
+            new ActionContext(
+                new DefaultHttpContext(),
+                new Microsoft.AspNetCore.Routing.RouteData(),
+                new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor(),
+                new ModelStateDictionary()
+            ),
             new List<IFilterMetadata>()
         )
         {

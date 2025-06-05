@@ -10,9 +10,9 @@ namespace Task_List_System.Controllers
     public class TaskController : ControllerBase
     {
 
-        private readonly TaskService _taskService;
+        private readonly ITaskService _taskService;
 
-        public TaskController(TaskService taskService)
+        public TaskController(ITaskService taskService)
         {
             _taskService = taskService;
         }

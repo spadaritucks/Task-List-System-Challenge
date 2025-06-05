@@ -9,7 +9,14 @@ using Task_List_System.Validations;
 
 namespace Task_List_System.Services
 {
-    public class TaskService
+    public interface ITaskService
+    {
+        List<TaskResponseDTO> GetAllTasks();
+        TaskResponseDTO CreateTask(TaskRequestDTO taskRequest);
+        TaskResponseDTO UpdateTask(Guid Id, TaskRequestDTO taskRequest);
+        TaskResponseDTO DeleteTask(Guid Id);
+    }
+    public class TaskService : ITaskService
     {
         private readonly TaskListSystemDbContext context;
 
