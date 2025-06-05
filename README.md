@@ -21,12 +21,20 @@ git clone https://github.com/seu-usuario/Task-List-System-Challenge.git
 ```bash
 cd Task-List-System-Challenge
 ```
+
 3. Restaure as dependencias:
 
 ```bash
 dotnet restore
 ```
-3. Iniciar a Aplicação:
+
+4. Realizar os Testes:
+
+```bash
+dotnet test
+```
+
+5. Iniciar a Aplicação:
 
 ```bash
 dotnet run --project TaskListSystem.API
