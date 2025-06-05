@@ -2,8 +2,8 @@
 {
     public enum TaskStatusEnum
     {
-        Pendente = 0,
-        EmProgresso = 1,
-        Concluida = 2,
+        Pendente = 1,
+        EmProgresso = 2,
+        Concluida = 3,
     }
 }

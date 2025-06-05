@@ -27,7 +27,7 @@ builder.Services.AddControllers()
     });
 
 
-builder.Services.AddScoped<TaskService>(); // <-- Aqui registra o service
+builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add(typeof(ExceptionFilter));

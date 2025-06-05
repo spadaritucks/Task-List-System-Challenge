@@ -24,6 +24,12 @@ public class TaskServiceTest
         _service = new TaskService(_context);
     }
 
+    [TearDown]
+    public void TearDown()
+    {
+        _context.Dispose();
+    }
+
     [Test]
     public void CreateTask_DeveAdicionarTarefa()
     {
