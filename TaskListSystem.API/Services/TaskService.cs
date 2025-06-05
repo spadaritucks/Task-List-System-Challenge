@@ -73,7 +73,7 @@ namespace Task_List_System.Services
         {
             Validate(taskRequest);
             
-            var entity = context.Tasks.FirstOrDefault(task => task.Id == Id) ?? throw new NotFoundException("Tarefa não encontrada");
+            var entity = context.Tasks.FirstOrDefault(task => task.Id == Id) ?? throw new NotFoundException("Tarefa não foi encontrada");
             entity.Title = taskRequest.Title;
             entity.Description = taskRequest.Description;
             entity.DueDate = taskRequest.DueDate;
@@ -96,7 +96,7 @@ namespace Task_List_System.Services
         public TaskResponseDTO DeleteTask(Guid Id)
         {
 
-            var entity = context.Tasks.FirstOrDefault(task => task.Id == Id) ?? throw new NotFoundException("Tarefa não encontrada");
+            var entity = context.Tasks.FirstOrDefault(task => task.Id == Id) ?? throw new NotFoundException("Tarefa não foi encontrada");
             context.Remove(entity);
             context.SaveChanges();
 
