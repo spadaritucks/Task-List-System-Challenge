@@ -1,0 +1,10 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/TaskListSystem
+/TaskListSystem.API/obj
+/TaskListSystem.Test/bin/Debug/net8.0
+/TaskListSystem.Test/obj
+*.user
+/TaskListSystem.API/bin/Debug/net8.0
