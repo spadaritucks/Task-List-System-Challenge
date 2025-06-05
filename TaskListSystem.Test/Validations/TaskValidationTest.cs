@@ -9,7 +9,7 @@ namespace TaskListSystem.Test.Validations;
 public class TaskValidationTest
 {
     [Test]
-    public void Validar_TituloVazio_DeveRetornarErro()
+    public void Validate_EmptyTitle_MustReturnError()
     {
         var validator = new TaskValidation();
         var dto = new TaskRequestDTO

@@ -21,7 +21,7 @@ public class TaskControllerTest
     }
 
     [Test]
-    public void GetAllTasks_DeveRetornarOk()
+    public void GetAllTasks_MustReturnOk()
     {
         // Arrange
         _serviceMock.Setup(s => s.GetAllTasks()).Returns(new List<TaskResponseDTO>());
@@ -34,7 +34,7 @@ public class TaskControllerTest
     }
 
     [Test]
-    public void CreateTask_DeveRetornarCreated()
+    public void CreateTask_MustReturnCreated()
     {
         // Arrange
         var dto = new TaskRequestDTO();

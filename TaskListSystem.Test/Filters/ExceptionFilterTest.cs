@@ -14,7 +14,7 @@ namespace TaskListSystem.Test.Filters;
 public class ExceptionFilterTest
 {
     [Test]
-    public void OnException_DeveRetornarErroCustomizado()
+    public void OnException_MustReturnCustomError()
     {
         var exception = new NotFoundException("Não encontrado");
         var context = new ExceptionContext(
@@ -40,7 +40,7 @@ public class ExceptionFilterTest
     }
 
     [Test]
-    public void OnException_DeveRetornarErroDesconhecido()
+    public void OnException_MustReturnInternalServerError()
     {
         var exception = new Exception("Erro desconhecido");
         var context = new ExceptionContext(

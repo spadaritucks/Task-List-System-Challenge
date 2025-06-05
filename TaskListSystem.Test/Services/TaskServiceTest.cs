@@ -31,7 +31,7 @@ public class TaskServiceTest
     }
 
     [Test]
-    public void CreateTask_DeveAdicionarTarefa()
+    public void CreateTask_MustReturnTask()
     {
         var dto = new TaskRequestDTO
         {
@@ -48,7 +48,7 @@ public class TaskServiceTest
     }
 
     [Test]
-    public void UpdateTask_TarefaNaoExiste_DeveLancarExcecao()
+    public void UpdateTask_MustThrowNotFoundException_WhenTaskDoesNotExist()
     {
         var dto = new TaskRequestDTO
         {
@@ -62,7 +62,7 @@ public class TaskServiceTest
     }
 
     [Test]
-    public void DeleteTask_TarefaNaoExiste_DeveLancarExcecao()
+    public void DeleteTask_MustThrowNotFoundException_WhenTaskDoesNotExist()
     {
         Assert.Throws<NotFoundException>(() => _service.DeleteTask(Guid.NewGuid()));
     }
